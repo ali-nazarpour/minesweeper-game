@@ -1,0 +1,158 @@
+/* Base styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 16px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: #fff;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#difficulty,
+#reset {
+  padding: 10px 15px;
+  margin: 0 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2a5298;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#difficulty:hover,
+#reset:hover {
+  background-color: #1e3c72;
+}
+
+#timer {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.grid {
+  display: grid;
+  gap: 2px;
+  background-color: #333;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.grid div {
+  background-color: #3e8e41;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  user-select: none;
+  color: white;
+  transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.grid div:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+.grid div.revealed {
+  background-color: #2c2c2c;
+  cursor: default;
+  box-shadow: none;
+}
+
+.grid div.mine.revealed {
+  background-color: #e57373;
+  color: #fff;
+}
+
+.grid div.flagged {
+  background-color: #ffd700;
+  color: #333;
+}
+
+.grid div[data='1'] {
+  color: #007bff;
+}
+
+.grid div[data='2'] {
+  color: #28a745;
+}
+
+.grid div[data='3'] {
+  color: #dc3545;
+}
+
+.grid div[data='4'] {
+  color: #fd7e14;
+}
+
+.grid div[data='5'] {
+  color: #6610f2;
+}
+
+.grid div[data='6'] {
+  color: #20c997;
+}
+
+.grid div[data='7'] {
+  color: #ffc107;
+}
+
+.grid div[data='8'] {
+  color: #17a2b8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #difficulty, #reset {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .grid div {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  #difficulty, #reset {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .grid div {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+}
